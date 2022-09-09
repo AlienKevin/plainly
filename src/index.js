@@ -10,7 +10,7 @@ worker.onmessage = (output) => {
 		return;
 	}
 	const file = input.files[0];
-	anchor = document.createElement("a");
+	let anchor = document.createElement("a");
 	anchor.id = "downloadAnchor";
 	anchor.href = URL.createObjectURL(new Blob([output.data], { type: file.type }));
 	anchor.download = file.name;
